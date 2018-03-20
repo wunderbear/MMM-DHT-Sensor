@@ -14,6 +14,8 @@
     "postinstall": "./node_modules/.bin/electron-rebuild -e ../../node_modules/electron"
   },
   "dependencies": {
+    "fs": "0.0.1-security",
+    "moment": "^2.21.0",
     "node-dht-sensor": "latest"
   },
   "devDependencies": {
