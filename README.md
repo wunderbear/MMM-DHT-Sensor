@@ -24,6 +24,7 @@ modules: [
 	...
 	{
 		module: 'MMM-DHT-Sensor',
+		header: 'Indoor',
 		config: {
 			// See below for more information.
 		}
@@ -72,13 +73,6 @@ Configurations properties
 			<td>Animation of changes
 				<br><b>Type:</b> <code>int</code>
 				<br><b>Default:</b> <code>0</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>titleText</code></td>
-			<td>Widget title text
-				<br><b>Type:</b> <code>string</code>
-				<br><b>Default:</b> <code>DHT</code>
 			</td>
 		</tr>
 		<tr>

@@ -10,7 +10,6 @@ Module.register('MMM-DHT-Sensor', {
         sensorType: 11, // 11 OR 22
         updateInterval: 5000, // in milliseconds
         animationSpeed: 0, // in milliseconds
-        titleText: "DHT",
         units: config.units
     },
 
@@ -38,12 +37,8 @@ Module.register('MMM-DHT-Sensor', {
     getDom: function() {
         var wrapper = document.createElement("div");
 
-        wrapper.appendChild(document.createTextNode(this.config.titleText));
-
-        wrapper.appendChild(document.createElement('br'));
         wrapper.appendChild(this.getValueElem(true, this.temperature));
-
-        wrapper.appendChild(document.createElement('br'));
+        wrapper.appendChild("&nbsp;&nbsp;&nbsp;");
         wrapper.appendChild(this.getValueElem(false, this.humidity));
 
         return wrapper;
