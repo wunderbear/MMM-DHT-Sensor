@@ -4,11 +4,11 @@
 }
 
 .dht-text{
-	float: right;
+	float: left;
 	display: inline;
 }
 
 .dht{
-	float: right;
+	float: left;
 	width: 150px;
 }
