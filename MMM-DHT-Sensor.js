@@ -8,7 +8,7 @@ Module.register('MMM-DHT-Sensor', {
     defaults: {
         sensorPIN: 4,
         sensorType: 11, // 11 OR 22
-        updateInterval: 2000, // in milliseconds
+        updateInterval: 5000, // in milliseconds
         animationSpeed: 0, // in milliseconds
         titleText: "DHT",
         units: config.units
@@ -17,6 +17,7 @@ Module.register('MMM-DHT-Sensor', {
     start: function() {
         this.humidity = this.temperature = '...';
         this.sendSocketNotification('CONFIG', this.config);
+	this.loaded = true;
     },
 
     socketNotificationReceived: function(notification, payload) {
