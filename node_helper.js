@@ -33,12 +33,13 @@ module.exports = NodeHelper.create({
 	    	self.sendSocketNotification('DHT_TEMPERATURE', temperature.toFixed(1));
 		self.sendSocketNotification('DHT_HUMIDITY', humidity.toFixed(1));
 
-		console.log('Trying to append to file ' + this.config.logfile);
-		fs.appendFile(
-		  '/home/pi/dht-sensor.csv', 
-		  moment().toISOString() + ", " + temperature + ", " + humidity + "\n",
-		  (err) => { if (err) console.log('Could not append DHT sensor readings file ' + this.config.logfile); }
- 		);
+		var filename = '/home/pi/dht-sensor-' + moment().format('YYYYMMDD') + '.csv';
+		try {
+		    var csv = moment().toISOString() + ", " + temperature + ", " + humidity + "\n";
+		    fs.appendFileSync(filename, csv); 
+		} catch(err) { 
+		    console.log('Could not append DHT sensor readings to ' + filename + ' : ' + err); 
+		}
 	    }
 	    else {
 		console.log("DHT error while reading from sensor " + err);
